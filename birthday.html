@@ -63,15 +63,19 @@ button{
 
 <body>
 
-<audio id="bgm" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2023/05/03/audio_8a8d3fbb56.mp3" type="audio/mpeg">
+<!-- LOCAL AUDIO (ANDROID CHROME SAFE) -->
+<audio id="bgm" loop preload="auto">
+  <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <!-- 1 -->
 <div class="screen dark" id="s1">
   <img src="photo1.jpg" class="hero">
-  <div class="text">🎉 Happy 20th Birthday Bubu 🎂💖</div>
-  <button onclick="startMusic(); go('2')">Thankyou babyy💖</button>
+  <div class="text">
+    🎉 Happy 20th Birthday Bubu 🎂💖<br>
+    <small>(pehle button tap karna 🎧)</small>
+  </div>
+  <button onclick="startMusic(); go('2')">dekhte hain 😏</button>
 </div>
 
 <!-- 2 -->
@@ -89,13 +93,13 @@ button{
 <!-- 4 -->
 <div class="screen light hidden" id="s4">
   <div class="text">Aaj phatake 🎉 gubbare 🎈<br>sab tere liye 💖</div>
-  <button onclick="go('5')">i am loving it 💖</button>
+  <button onclick="go('5')">mujhe pasand aa raha hai 🥹</button>
 </div>
 
 <!-- 5 -->
 <div class="screen dark hidden" id="s5">
   <div class="text">Sach bolun Bubu…<br>tu mujhe kaafi zyada pasand hai 😏</div>
-  <button onclick="go('6')">I also love you alot babyy 🤍</button>
+  <button onclick="go('6')">sach hai 🤍</button>
 </div>
 
 <!-- 6 -->
@@ -109,7 +113,7 @@ button{
 <div class="screen dark hidden" id="s7">
   <img src="photo3.jpg" class="hero">
   <div class="text">Teenage chapter band.<br>New phase start ✨</div>
-  <button onclick="go('8')">yesss🤍</button>
+  <button onclick="go('8')">samajh aa raha hai 🤍</button>
 </div>
 
 <!-- 8 -->
@@ -127,8 +131,8 @@ button{
 <!-- 10 -->
 <div class="screen light hidden" id="s10">
   <div class="text">Aaj birthday gift chahiye?</div>
-  <button onclick="go('11')">chahiye 🙄</button>
-  <button onclick="go('11')">obviously chahiye babyy💖</button>
+  <button onclick="go('11')">haan chahiye 🙄</button>
+  <button onclick="go('11')">obviously chahiye 😒</button>
 </div>
 
 <!-- 11 -->
@@ -152,7 +156,7 @@ button{
 <!-- 14 -->
 <div class="screen light hidden" id="s14">
   <div class="text">Aur jab tu smile karti hai…<br>sab kuch soft ho jata hai 💗</div>
-  <button onclick="go('14a')">awww🥺</button>
+  <button onclick="go('14a')">bas thoda sa 🥺</button>
 </div>
 
 <!-- 14a -->
@@ -196,7 +200,7 @@ button{
 <!-- 20 -->
 <div class="screen dark hidden" id="s20">
   <div class="text">Gift wo hota hai jo ruk jaaye…<br>jo saath chale…</div>
-  <button onclick="go('21')">awww🤍</button>
+  <button onclick="go('21')">lag raha hai 🤍</button>
 </div>
 
 <!-- 21 -->
@@ -208,7 +212,7 @@ button{
 <!-- 22 -->
 <div class="screen dark hidden" id="s22">
   <div class="text">Jo tere saath rahega —<br>har phase mein 🫂</div>
-  <button onclick="go('23')">I love youu babyy🤍</button>
+  <button onclick="go('23')">bas yahin 🤍</button>
 </div>
 
 <!-- 23 -->
@@ -224,7 +228,10 @@ button{
 
 <script>
 function startMusic(){
-  document.getElementById("bgm").play().catch(()=>{});
+  const a = document.getElementById("bgm");
+  a.muted = false;
+  a.volume = 1.0;
+  a.play();
 }
 function go(nextId){
   document.querySelector(".screen:not(.hidden)").classList.add("hidden");
