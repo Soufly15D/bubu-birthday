@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Bubu 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  overflow:hidden;
+}
+.screen{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+.dark{ background:#ff4f8b; color:white; }
+.light{ background:#ffe6ee; color:#222; }
+.hidden{display:none;}
+
+.hero{
+  width:170px;
+  height:220px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+.text{
+  font-size:22px;
+  line-height:1.6;
+  margin-top:20px;
+  max-width:420px;
+}
+button{
+  margin-top:30px;
+  padding:14px 36px;
+  border:none;
+  border-radius:30px;
+  font-size:18px;
+  cursor:pointer;
+}
+.dark button{ background:white; color:#ff4f8b; }
+.light button{ background:#ff4f8b; color:white; }
+
+.float{
+  position:fixed;
+  bottom:-30px;
+  font-size:28px;
+  animation:float 6s linear infinite;
+}
+@keyframes float{
+  to{transform:translateY(-120vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgm" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2023/05/03/audio_8a8d3fbb56.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 1 -->
+<div class="screen dark" id="s1">
+  <img src="photo1.jpg" class="hero">
+  <div class="text">🎉 Happy 20th Birthday Bubu 🎂💖</div>
+  <button onclick="startMusic(); go('2')">Thankyou babyy💖</button>
+</div>
+
+<!-- 2 -->
+<div class="screen light hidden" id="s2">
+  <div class="text">Ruk… thoda sa 🤍</div>
+  <button onclick="go('3')">theek hai 😌</button>
+</div>
+
+<!-- 3 -->
+<div class="screen dark hidden" id="s3">
+  <div class="text">Tu 20 ki ho gayi hai…<br>par excitement abhi bhi wahi hai 😜</div>
+  <button onclick="go('4')">haan thodi si 😜</button>
+</div>
+
+<!-- 4 -->
+<div class="screen light hidden" id="s4">
+  <div class="text">Aaj phatake 🎉 gubbare 🎈<br>sab tere liye 💖</div>
+  <button onclick="go('5')">i am loving it 💖</button>
+</div>
+
+<!-- 5 -->
+<div class="screen dark hidden" id="s5">
+  <div class="text">Sach bolun Bubu…<br>tu mujhe kaafi zyada pasand hai 😏</div>
+  <button onclick="go('6')">I also love you alot babyy 🤍</button>
+</div>
+
+<!-- 6 -->
+<div class="screen light hidden" id="s6">
+  <img src="photo2.jpg" class="hero">
+  <div class="text">Aur ye sirf aaj ki baat nahi 🤍</div>
+  <button onclick="go('7')">ispe thoda rukte hain 👀</button>
+</div>
+
+<!-- 7 -->
+<div class="screen dark hidden" id="s7">
+  <img src="photo3.jpg" class="hero">
+  <div class="text">Teenage chapter band.<br>New phase start ✨</div>
+  <button onclick="go('8')">yesss🤍</button>
+</div>
+
+<!-- 8 -->
+<div class="screen light hidden" id="s8">
+  <div class="text">Tu life mein genuinely bohot achha kar rahi hai 🥹</div>
+  <button onclick="go('9')">sun ke acha laga 🥺</button>
+</div>
+
+<!-- 9 -->
+<div class="screen dark hidden" id="s9">
+  <div class="text">Waise ek cheez decide karni hai 😏</div>
+  <button onclick="go('10')">kya decide karna hai 😏</button>
+</div>
+
+<!-- 10 -->
+<div class="screen light hidden" id="s10">
+  <div class="text">Aaj birthday gift chahiye?</div>
+  <button onclick="go('11')">chahiye 🙄</button>
+  <button onclick="go('11')">obviously chahiye babyy💖</button>
+</div>
+
+<!-- 11 -->
+<div class="screen dark hidden" id="s11">
+  <div class="text">Gift se pehle ek choti si baat 😌</div>
+  <button onclick="go('12')">sun rahi hoon 🤍</button>
+</div>
+
+<!-- 12 -->
+<div class="screen light hidden" id="s12">
+  <div class="text">Eyes band kar…<br>aur thoda feel kar 🤍</div>
+  <button onclick="go('13')">eyes band 🙈</button>
+</div>
+
+<!-- 13 -->
+<div class="screen dark hidden" id="s13">
+  <div class="text">Jab tu khush hoti hai,<br>sab better lagta hai 🙂</div>
+  <button onclick="go('14')">shayad haan 🙂</button>
+</div>
+
+<!-- 14 -->
+<div class="screen light hidden" id="s14">
+  <div class="text">Aur jab tu smile karti hai…<br>sab kuch soft ho jata hai 💗</div>
+  <button onclick="go('14a')">awww🥺</button>
+</div>
+
+<!-- 14a -->
+<div class="screen dark hidden" id="s14a">
+  <img src="photo4.jpg" class="hero">
+  <div class="text">Ye wali smile…<br>bina bole sab keh deti hai 🤍</div>
+  <button onclick="go('15')">yeh moment 🤍</button>
+</div>
+
+<!-- 15 -->
+<div class="screen light hidden" id="s15">
+  <div class="text">Ye sirf photo nahi…<br>ye feeling hai ✨</div>
+  <button onclick="go('16')">haan samajh rahi hoon ✨</button>
+</div>
+
+<!-- 16 -->
+<div class="screen dark hidden" id="s16">
+  <img src="photo5.jpg" class="hero">
+  <div class="text">Ye wo phase hai jahan tu khud ko aur pasand kar rahi hai 🤍</div>
+  <button onclick="go('17')">acha lag raha hai 😌</button>
+</div>
+
+<!-- 17 -->
+<div class="screen light hidden" id="s17">
+  <div class="text">Waise… gift abhi bhi nahi aaya 😌</div>
+  <button onclick="go('18')">ab toh batao na 🙄</button>
+</div>
+
+<!-- 18 -->
+<div class="screen dark hidden" id="s18">
+  <div class="text">Bas thoda aur patience 😏</div>
+  <button onclick="go('19')">theek hai 😒</button>
+</div>
+
+<!-- 19 -->
+<div class="screen light hidden" id="s19">
+  <div class="text">Gift koi cheez nahi hota…</div>
+  <button onclick="go('20')">sun rahi hoon 👀</button>
+</div>
+
+<!-- 20 -->
+<div class="screen dark hidden" id="s20">
+  <div class="text">Gift wo hota hai jo ruk jaaye…<br>jo saath chale…</div>
+  <button onclick="go('21')">awww🤍</button>
+</div>
+
+<!-- 21 -->
+<div class="screen light hidden" id="s21">
+  <div class="text">Gift main hoon.<br><b>Tera Dudu 🤍</b></div>
+  <button onclick="go('22')">❤️</button>
+</div>
+
+<!-- 22 -->
+<div class="screen dark hidden" id="s22">
+  <div class="text">Jo tere saath rahega —<br>har phase mein 🫂</div>
+  <button onclick="go('23')">I love youu babyy🤍</button>
+</div>
+
+<!-- 23 -->
+<div class="screen light hidden" id="s23">
+  <div class="text">
+    Aur haan 😏<br>
+    photos ya videos bhejna sirf aadat nahi hai…<br>
+    wo mujhe yaad dilata hai ki<br>
+    jis insaan se main pyaar karta hoon,<br>
+    wo khush hai 🤍
+  </div>
+</div>
+
+<script>
+function startMusic(){
+  document.getElementById("bgm").play().catch(()=>{});
+}
+function go(nextId){
+  document.querySelector(".screen:not(.hidden)").classList.add("hidden");
+  document.getElementById("s"+nextId).classList.remove("hidden");
+}
+setInterval(()=>{
+  const f=document.createElement("div");
+  f.className="float";
+  f.innerHTML=Math.random()>0.5?"💖":"🎈";
+  f.style.left=Math.random()*100+"vw";
+  document.body.appendChild(f);
+  setTimeout(()=>f.remove(),6000);
+},300);
+</script>
+
+</body>
+</html>
