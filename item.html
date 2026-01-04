@@ -58,6 +58,62 @@ button{
 @keyframes float{
   to{transform:translateY(-120vh);opacity:0;}
 }
+  /* GIFT REVEAL MAGIC */
+.magic-wrap{
+  position:relative;
+  margin-top:10px;
+}
+
+/* PHOTO ZOOM + GLOW */
+.magic-photo{
+  width:180px;
+  height:240px;
+  object-fit:cover;
+  border-radius:22px;
+  transform:scale(0.2);
+  animation:zoomGlow 2s cubic-bezier(.17,.89,.32,1.49) forwards;
+  box-shadow:0 0 0 rgba(255,79,139,0.8);
+}
+
+@keyframes zoomGlow{
+  0%{
+    transform:scale(0.2);
+    box-shadow:0 0 0 rgba(255,79,139,0);
+  }
+  60%{
+    transform:scale(1.1);
+    box-shadow:0 0 40px rgba(255,79,139,0.8);
+  }
+  100%{
+    transform:scale(1);
+    box-shadow:0 0 25px rgba(255,79,139,0.6);
+  }
+}
+
+/* FLOATING SOFT HEARTS */
+.soft-heart{
+  position:absolute;
+  font-size:20px;
+  animation:floatHeart 4s infinite ease-in-out;
+  opacity:0;
+}
+
+@keyframes floatHeart{
+  0%{transform:translateY(10px) scale(0);opacity:0;}
+  50%{opacity:1;}
+  100%{transform:translateY(-25px) scale(1);opacity:0;}
+}
+/* CONFETTI */
+.confetti{
+  position:fixed;
+  top:-10px;
+  font-size:18px;
+  animation:fall 3.5s linear forwards;
+}
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg);opacity:0;}
+}
+  
 </style>
 </head>
 
@@ -205,9 +261,28 @@ button{
 
 <!-- 21 -->
 <div class="screen light hidden" id="s21">
-  <div class="text">Gift main hoon.<br><b>Tera Dudu 🤍</b></div>
-  <button onclick="go('22')">❤️</button>
+
+  <div class="magic-wrap">
+
+    <img src="dudu.jpg" class="magic-photo">
+
+    <!-- Floating hearts -->
+    <div class="soft-heart" style="top:-15px; left:-10px; animation-delay:0s;">💖</div>
+    <div class="soft-heart" style="top:20px; right:-15px; animation-delay:0.8s;">💗</div>
+    <div class="soft-heart" style="bottom:-10px; left:20px; animation-delay:1.4s;">💞</div>
+    <div class="soft-heart" style="bottom:15px; right:25px; animation-delay:2s;">💓</div>
+
+  </div>
+
+  <div class="text" style="margin-top:30px;">
+    Gift main hoon.<br>
+    <b>Tera Dudu 🤍</b><br><br>
+    Jo hamesha tere saath rahe 🙂
+  </div>
+
+  <button onclick="go('22'); blastConfetti();">❤️</button>
 </div>
+
 
 <!-- 22 -->
 <div class="screen dark hidden" id="s22">
@@ -245,8 +320,21 @@ setInterval(()=>{
   document.body.appendChild(f);
   setTimeout(()=>f.remove(),6000);
 },300);
+  function blastConfetti(){
+  for(let i=0;i<25;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.innerHTML=Math.random()>0.5?"🎉":"✨";
+    c.style.left=Math.random()*100+"vw";
+    c.style.animationDelay=Math.random()+"s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),4000);
+  }
+}
+
 </script>
 
 </body>
 </html>
+
 
